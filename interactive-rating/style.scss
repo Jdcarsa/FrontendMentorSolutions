@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+@mixin cards{
+    background: hsl(213, 19%, 18% , 0.4);
+    width: 350px;
+    height: 335px;
+    border-radius: 20px;
+}
+
+@mixin h1-style{
+    color:hsl(0, 0%, 100%);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+@mixin p-style{
+    color:hsl(217, 12%, 63%);
+    font-size: 15px;
+    font-weight: 400;
+    margin: 5px 25px;
+}
+
+html{
+    background: hsl(216, 12%, 8%);
+    font-family: 'Overpass', sans-serif;
+}
+
+
+.container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 130px 50px;
+}
+
+.main-card{
+    @include cards();
+}
+
+.icon{
+    background:hsla(216, 12%, 54%, 0.22);
+    width: 40px;
+    height: 40px;
+    margin: 30px 10px 0px 30px;
+    padding: auto;
+    border-radius: 50%;
+    display: grid;
+    place-content:center ;
+}
+
+.body-card{
+    display: grid;
+    place-content: center;
+    h1{
+        @include h1-style();
+        margin: 15px 0px 10px 25px;
+    }
+    p{
+        @include p-style();
+    }
+}
+
+.rating{
+    display: inline-flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0px 20px;
+    .number{
+        display: grid;
+        place-items: center;
+        height: 40px;
+        width: 40px;
+        background:hsla(216, 12%, 54%, 0.22);
+        color: hsl(217, 12%, 63%);
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover{
+            background: hsl(25, 97%, 53%);
+            color:hsl(0, 0%, 100%);
+            transition: background 0.2s ease-in-out;
+        }
+    }
+}
+
+.select{
+    display: grid;
+    place-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: hsl(217, 12%, 63%);
+    color: hsl(0, 0%, 100%);
+}
+
+footer{
+    text-align: center;
+    margin: 10px 0;
+    button{
+        padding: 8px;
+        width: 80%;
+        font-size: 15px;
+        background: hsl(25, 97%, 53%);
+        color:hsl(0, 0%, 100%);
+        cursor: pointer;
+        border: none;
+        border-radius: 30px;
+        letter-spacing: 1.5pt;
+        &:hover{
+            background: hsl(0, 0%, 100%);
+            color:hsl(25, 97%, 53%);
+            transition: background 0.2s ease-in-out;
+        }
+    }
+}
+
+.thanks-card{
+    @include cards();
+    display: none;
+    img{
+        margin: 30px 0px 10px
+    }
+    
+    h4{
+        padding: 7px;
+        text-align: center;
+        background: hsla(216, 12%, 54%, 0.22);
+        color: hsl(25, 97%, 53%);
+        font-size: 14px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
+    
+    h1{
+        @include h1-style();
+        margin-bottom: 5px;
+    }
+
+    p{
+        @include p-style();
+    }
+}
